@@ -1,313 +1,356 @@
-<!doctype html>
-<html lang="en">
-
-<!-- Head -->
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="格格巫">
+    
     <meta name="description" content="小白的成长之路">
-    <meta name="keyword" content="">
-    <link rel="shortcut icon" href="">
-
     
+    
+    
+    
+    
+    
+    <title>归档 | 格格巫的博客</title>
+    <!-- inject:style -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- endinject -->
+    <style>
+        .cube-loading {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('/images/lg/loading.gif') no-repeat center center;
+            background-color: rgba(0,0,0,.7);
+        }
 
-    <title>
-        
-        格格巫的博客
-    </title>
+        .cube-loading.out {
+            display: none;
+        }
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        .cube-loading:before {
+            display: block;
+            content: '加载中';
+            position: relative;
+            width: 100%;
+            top: 50%;
+            right: -50%;
+            color: #fff;
+        }
 
-    <!-- Custom Fonts -->
-    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+        @media(max-width: 768px) {
+            .cube-loading:before {
+                font-size: 1.2em;
+                transform: translate(-24px,20px);
+                -webkit-transform: translate(-24px,20px);
+                -o-transform: translate(-24px,20px);
+                -ms-transform: translate(-24px,20px);
+            }
+        }
 
-    <!-- Plugin CSS -->
+        @media(min-width: 768px) {
+            .cube-loading:before {
 
-
-    <!-- Custom CSS -->
-    <!-- ↓这是stylus文件 -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/highlight.css">
-    <link rel="stylesheet" href="/css/toc.css">
-
-
+            }
+        }
+    </style>
+    
 </head>
-<body></body>
-
-
 <body>
-
-<!-- Header -->
-<!-- Post Header -->
-<style type="text/css">
-    header.intro-header {
-     background-image: url('/');
-        /*page*/
+<div class="cube-body">
+    <nav id="cube-top-memu" class="cube-menu">
+    <ul class="cube-menu-collapse">
+        
+        <li>
+            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
+            <a href="/">首页</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-archive" aria-hidden="true"></i>
+            <a href="/archives">归档</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-categories" aria-hidden="true"></i>
+            <a href="/categories">分类</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-tags" aria-hidden="true"></i>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-about" aria-hidden="true"></i>
+            <a href="/about-me">关于我</a>
+        </li>
+        
+    </ul>
+</nav>
+<nav class="cube-side-menu" id="cube-side-menu">
+    <ul class="cube-menu-list">
+        
+        <li>
+            <a class="lrc-control">开启歌词</a>
+        </li>
+        
+        <li>
+            <a class="scroll-to-top">回到顶部</a>
+        </li>
+    </ul>
+</nav>
+    <header class="cube-header" id="cube-header">
+    <img src=" http://cube-1252774894.cosgz.myqcloud.com/background.png " alt="头部背景图片">
     
-    }
-</style>
-
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <!-- 文章 -->
-                
-                <div class="site-heading">
-                    <h1>格格巫的博客</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">小白的成长之路</span>
-                </div>
-                
-
-            </div>
-        </div>
+    <div class="cube-type">
+        <span class="cube-typed-title">格格巫的博客</span>
+        <span class="cube-typed-cursor">|</span>
     </div>
+    
 </header>
 
-<!-- Nav -->
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">格格巫的博客</a>
+    <style>
+        nav.cube-menu:before {
+            content: '';
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 44px;
+        
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+        
+            z-index: -1;
+            background-image: url('/images/undefined');
+            background-repeat: no-repeat;
+            background-position: center -356px;
+            background-size: cover;
+            background-color: transparent;
+        }
+
+        header.cube-background.cube-header-background {
+            visibility: hidden;
+            background-image: url('/images/undefined');
+            background-position: center -400px;
+        }
+    </style>
+    <header class="cube-background cube-header-background">
+        
+        <div class="cube-type">
+            <span class="cube-typed-title">格格巫的博客</span>
+            <span class="cube-typed-cursor">|</span>
         </div>
+        
+    </header>
+    <div class="load-header-background"></div>
+    <script>
+        (function (window) {
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li><a href="/">Home</a></li>
-                    
-                    <li><a href="/portfolio">Portfolio</a></li>
-                    
-                    <li><a href="/about">About</a></li>
-                    
-                </ul>
-            </div>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
+            window.headerModule = {}
+            window.headerModule.image = {
+                width: '2000',
+                height: '1414'
+            }
 
-<!-- Content -->
-<div class="container">
-    <div class="row">
-        <!-- Post Container -->
-        <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-
-            
-
-            <div class=" post-list">
-                <div class="layout-top">
-                    <h5 class="post-subtitle">
-                        2018-03-02 <i class="fa fa-bookmark"></i>
-                    </h5>
-                </div>
-                <div class="layout-bottom">
-                    <div class="post-content-container">
-                        <a href="/2018/03/02/Hello-gegewu/">
-                            <h2 class="post-title">Hello gegewu</h2>
-                        </a>
-
-                        <div class="post-list-tags">
-                            <span><i class="fa fa-tag"></i></span>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            
-
-            <div class=" post-list">
-                <div class="layout-top">
-                    <h5 class="post-subtitle">
-                        2018-03-01 <i class="fa fa-bookmark"></i>
-                    </h5>
-                </div>
-                <div class="layout-bottom">
-                    <div class="post-content-container">
-                        <a href="/2018/03/01/hello-world/">
-                            <h2 class="post-title">Hello World</h2>
-                        </a>
-
-                        <div class="post-list-tags">
-                            <span><i class="fa fa-tag"></i></span>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            
-
-            <!-- Pager -->
-            <ul class="pager">
+        })(window)
+    </script>
     
+    <div class="cube-content">
+        <div class="cube-left">
+            <style>
+    @media(max-width: 768px) {
+        body {
+            background-color: #fff!important;
+        }
+    }
+</style>
+<div class="cube-archives">
     
-</ul>
-
-        </div>
-
-        <!-- Sidebar -->
-        <!-- Sidebar container-->
-<div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12 col-xs-12 sidebar-container">
-    <div class="bs-docs-sidebar">
-
-        <!-- categoryWidget -->
-        <div class="categoryWidget">
-            <h3 style="text-align: center;">Categories</h3>
-            <div id="accordion">
-                <!-- 分组 -->
+        
+        <div class="cube-archive" style="margin-top: 0;">
+            
                 
-
-                
-            </div>
-
-        </div>
-
-        <!-- archiveWidget -->
-        <div class="archiveWidget">
-            <h3 style="text-align: center;">Archives</h3>
-
-            <div id="archive">
-                
-
-                
-                <div class="panel">
-                    <div class="archive">
-                        <span><i class="fa fa-angle-double-right"></i></span>
-                        <a class="archiveName" data-archive="2018archive" data-toggle="collapse"
-                           data-parent="#accordion"
-                           data-target="#2018archive"
-                           href="/archives/2018/">
-                            <h5>2018 (2)</h5>
-                        </a>
-                    </div>
-                    <div class="collapse" id="/archives/2018/">
-                        <ul>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            <li>
-                                <span><i class="fa fa-angle-right"></i></span>
-                                <a class="archiveName" data-parchive="2018archive"
-                                   data-archive="201803archive"
-                                   href="/archives/2018/03/">
-                                    <h5>三月
-                                        (2)</h5>
-                                </a>
+                   
+                            <h1 class="title">2018</h1>
+                            <ul class="posts">
+                   
+                            <li class="post">
+                                <a href="/2018/03/02/Hello-gegewu/">Hello gegewu</a>
                             </li>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                        </ul>
-                    </div>
-                </div>
-
                 
-            </div>
-        </div>
-
-        <!-- tagWidget -->
-        <div class="tagWidget"
-             style="margin-top: 55px;">
-            <h3 style="text-align: center;">Tags</h3>
-            <div class="tag">
-
+            
                 
-            </div>
-
+                   
+                            <li class="post">
+                                <a href="/2018/03/01/hello-world/">Hello World</a>
+                            </li>
+                
+            
+                    </ul>
+                        </div>
+        
+    
+</div>
         </div>
+        <div class="cube-right">
+            
+
+<div class="cube-search cube-sidebar" id="cube-search">
+    <div class="search-container">
+        <input type="text" placeholder="搜索" class="cube-search-input" id="cube-search-input">
+        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
+    </div>
+    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
+</div>
+<script>
+    (function (window) {
+        'use strict';
+        window.searchModule = {}
+        window.searchModule.JSONUrl = '/content.json'
+        window.searchModule.rootUrl = '/'
+    })(window)
+</script>
+<div class="cube-search-form">
+    <div class="cube-search-control">
+        <input type="text" placeholder="搜索" class="search-input">
+        <a class="close-button">
+            <i class="cube-icon cube-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="cube-search-result"></div>
+</div>
+
+
+<div class="cube-author cube-sidebar" id="cube-author">
+    
+    
+    <span>格格巫</span>
+    
+    
+    <a title="小白的成长之路">小白的成长之路</a>
+    
+    <div class="count">
+        <a class="count articles"><span>2</span>文章</a>
+        <a class="count tags"><span>0</span>标签</a>
+        <a class="count categories"><span>0</span>分类</a>
     </div>
 </div>
-    </div>
+
+
+
+<div class="cube-music cube-sidebar" id="cube-music">
+    <div class="cube-player aplayer" id="cube-player"></div>
 </div>
+<script>
+    (function (window) {
+        window.musicModule = {}
+        window.musicModule.musicConfig = '{"narrow":false,"autoplay":false,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"},{"title":"Butter-Fly","author":"和田光司","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg"},{"title":"宵闇花火","author":"葉月ゆら","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg"}]}'
+        window.musicModule.lrcConfig = {
+            open: '开启歌词',
+            close: '关闭歌词'
+        }
+    })(window)
+</script>
 
-<!-- Footer -->
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                
 
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; 格格巫的博客 2018
-                    <br>
-                    Theme by <a href="http://beantech.org/">Bean Tech</a>
-                    <span style="display: inline-block; margin: 0 5px;">
-                        <i class="fa fa-heart"></i>
-                    </span> 
-                    re-Ported by <a href="http://yoursite.com">格格巫的博客</a>
+
+<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
+    <div class="title">
+        <a>近期文章</a>
+    </div>
+    <ul class="list">
+        
+        
+        <li>
+            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
+            
+            <div class="normal">
+                <p class="index first">
+                    <span>1</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/03/02/Hello-gegewu/" title="Hello gegewu">Hello gegewu</a>
                 </p>
             </div>
+            
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/03/01/hello-world/" title="Hello World">Hello World</a>
+                </p>
+            </div>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+
+
+
+
+
+<div class="cube-links cube-sidebar" id="cube-links">
+    <div class="title">
+        <a>个人链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
+            
+            <a href="https://github.com/ZEROKISEKI" target="_blank">GitHub</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
+    <div class="title">
+        <a>友情链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/friend_links/micblo.png">
+            <a href="https://lishibo-ios.github.io" target="_blank">拾忆的技术博客</a>
+        </li>
+        
+    </ul>
+</div>
+
+
         </div>
     </div>
+</div>
+<footer class="cube-footer">
+    
+© 2017 格格巫
+
+<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
 </footer>
-
-<!-- jQuery -->
-<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
+<!-- inject:script -->
 <script src="/js/script.js"></script>
-
-
-
-
+<!-- endinject -->
+<div class="cube-loading out"></div>
 </body>
 </html>
